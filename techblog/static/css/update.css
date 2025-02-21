@@ -1,0 +1,243 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Navbar Styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(9, 78, 105);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  /* Logo Styling */
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  header .logo h1 {
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Navbar Links */
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  /* Hover effect for links */
+  nav ul li a:hover {
+    color: #007BFF;
+  }
+  
+  /* Search Bar Styling */
+  .search-container {
+    display: flex;
+  }
+  
+  .search-container input {
+    padding: 6px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+  
+  .search-container button {
+    background: #007BFF;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .search-container button:hover {
+    background: #0056b3;
+  }
+  
+  /* Blog Styling */
+  body {
+    background-image: url('/static/images/internet.jpg'); /* Change to your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 60px; /* Offset the card so it doesn't overlap with the fixed navbar */
+  }
+  
+  /* Card with Background Overlay */
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  /* Header Styling for Card */
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Label Styling */
+  label {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Input and Textarea Styling */
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #f8f8f8;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  /* Focus Effects */
+  input[type="text"]:focus,
+  textarea:focus,
+  input[type="file"]:focus {
+    border-color: #999;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(150, 150, 150, 0.3);
+  }
+  
+  /* Textarea Resizing */
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Submit Button Styling */
+  button[type="submit"] {
+    background: linear-gradient(135deg, #85c1e9, #a2d9ce);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Submit Button Hover Effect */
+  button[type="submit"]:hover {
+    background: linear-gradient(135deg, #a2d9ce, #85c1e9);
+    transform: scale(1.05);
+  }
+  
+  /* ✅ Image Container Styling (Fixes Image Overflow) */
+  .current-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.05); /* Light background */
+  }
+  
+  /* ✅ Image Itself */
+  .current-image img {
+    width: 100%; /* Ensures responsiveness */
+    max-width: 450px; /* Prevents it from being too large */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 250px; /* Limits height */
+    object-fit: contain; /* Ensures full image is visible */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+  
+    .card {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    button[type="submit"] {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    /* ✅ Mobile Optimization for Image */
+    .current-image img {
+      max-width: 100%;
+      max-height: 200px;
+    }
+  }
+  
