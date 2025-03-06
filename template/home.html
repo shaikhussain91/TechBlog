@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home Page</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="" style="width: 80px;"></div>
+    <nav>
+      <a href="{% url 'myapp:login' %}">Signin</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Publish your passions, your way</h1>
+    <p>Create a unique and beautiful blog easily.</p>
+    <a href="{% url 'myapp:login' %}" class="cta-button">Create Your Blog</a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <img src="{% static 'images/bg2.jpg' %}" alt="Feature 2">
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Blogger. All rights reserved.
+  </footer>
+</body>
+</html>

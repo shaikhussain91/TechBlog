@@ -1,0 +1,77 @@
+{% extends "main.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>{{ post.title }}</h1>
+    <a href="{% url 'myapp:blog' %}">Back to Blog</a>
+</header>
+
+{% block body %}
+<main>
+    <article>
+        <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="post-image">
+        <p class="post-date">{{ post.date_posted|date:"F j, Y" }}</p>
+        <p>{{ post.discription }}</p>
+    </article>
+    
+    <!-- Like Button -->
+    <div class="post-actions">
+        <button onclick="likePost({{ post.id }})">Like (<span id="like-count-{{ post.id }}">{{ post.likes }}</span>)</button>
+    </div>
+
+    <!-- Update & Delete Buttons -->
+    <div class="post-actions">
+        <a href="{% url 'myapp:update' post.id %}" class="btn-update">Update</a>
+        <a href="{% url 'myapp:delete' post.id %}" class="btn-delete" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <textarea id="comment-input-{{ post.id }}" placeholder="Write a comment..."></textarea>
+        <button onclick="submitComment({{ post.id }})">Comment</button>
+    </div>
+
+    <div id="comments-{{ post.id }}">
+        {% for comment in post.comments.all %}
+            <p><strong>{{ comment.user }}</strong>: {{ comment.text }}</p>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
+    </div>
+</main>
+
+<script>
+    function likePost(postId) {
+        let likeCount = document.getElementById('like-count-' + postId);
+        let currentLikes = parseInt(likeCount.innerText);
+        likeCount.innerText = currentLikes + 1;
+    }
+
+    function submitComment(postId) {
+        let commentInput = document.getElementById('comment-input-' + postId);
+        let commentText = commentInput.value;
+        if (commentText.trim() === "") return;
+        
+        let commentSection = document.getElementById('comments-' + postId);
+        let newComment = document.createElement('p');
+        newComment.innerHTML = `<strong>You</strong>: ${commentText}`;
+        commentSection.appendChild(newComment);
+        commentInput.value = "" ;
+    }
+</script>
+
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock %}
+
+</body>
+</html>

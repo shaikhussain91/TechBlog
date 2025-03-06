@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(../../static/images/blogbg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px black;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+.login { background-color: #4CAF50; }
+.create { background-color: #007BFF; }
+.buttons button:hover { transform: scale(1.05); }
+
+@media (max-width: 480px) {
+    .buttons { flex-direction: column; }
+    .buttons button { width: 100%; }
+}

@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<div class="about-container">
+    <div class="about-header">
+        <h1>About Us</h1>
+    </div>
+    <div class="about-content">
+        <p>Welcome to our blogging platform! Here, we share insightful articles, personal stories, and a variety of content designed to inform and inspire.</p>
+        <p>Our mission is to create a community of writers and readers who can connect through meaningful content. Whether you're here to learn, share, or explore, we're glad to have you.</p>
+        <p>Founded in {{ year }}, our platform has grown into a hub for creativity and knowledge-sharing. Join us on this journey and become part of our story!</p>
+    </div>
+</div>
+{% endblock %}

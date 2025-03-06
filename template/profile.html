@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <div class="profile-container">
+        <h2>Profile Information</h2>
+        <div class="profile-info">
+            <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="image">
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>First Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>         
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Password :</strong> ************</p>         
+        </div>
+    </div>
+{% endblock %}
